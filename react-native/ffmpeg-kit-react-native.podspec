@@ -14,9 +14,9 @@ Pod::Spec.new do |s|
   s.requires_arc      = true
   s.static_framework  = true
 
-  s.source       = { :git => "https://github.com/yosizesta/ffmpeg-kit.git", :tag => "react.native.v#{s.version}" }
+  s.source       = { :path => "." }
 
-  s.default_subspec   = 'https'
+  s.default_subspec   = 'min-gpl'
 
   s.dependency "React-Core"
 
@@ -37,7 +37,9 @@ Pod::Spec.new do |s|
   s.subspec 'min-gpl' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
-      ss.dependency 'ffmpeg-kit-ios-min-gpl', "6.0"
+  
+       ss.vendored_frameworks = 'Frameworks/bundle-apple-xcframework-ios/ffmpegkit.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavdevice.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavcodec.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavfilter.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavformat.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavutil.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libswresample.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libswscale.xcframework'
+                         
       ss.ios.deployment_target = '12.1'
   end
 
@@ -51,28 +53,28 @@ Pod::Spec.new do |s|
   s.subspec 'https' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
-      ss.dependency 'ffmpeg-kit-ios-https', "6.0"
+      ss.dependency 'bundle-apple-xcframework-ios', "6.0"
       ss.ios.deployment_target = '12.1'
   end
 
   s.subspec 'https-lts' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
-      ss.dependency 'ffmpeg-kit-ios-https', "6.0.LTS"
+      ss.dependency 'bundle-apple-xcframework-ios', "6.0.LTS"
       ss.ios.deployment_target = '10'
   end
 
   s.subspec 'https-gpl' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
-      ss.dependency 'ffmpeg-kit-ios-https-gpl', "6.0"
+      ss.dependency 'bundle-apple-xcframework-ios-gpl', "6.0"
       ss.ios.deployment_target = '12.1'
   end
 
   s.subspec 'https-gpl-lts' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
-      ss.dependency 'ffmpeg-kit-ios-https-gpl', "6.0.LTS"
+      ss.dependency 'bundle-apple-xcframework-ios-gpl', "6.0.LTS"
       ss.ios.deployment_target = '10'
   end
 
