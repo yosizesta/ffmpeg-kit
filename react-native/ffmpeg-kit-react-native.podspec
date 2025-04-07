@@ -38,7 +38,8 @@ Pod::Spec.new do |s|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
   
-       ss.vendored_frameworks = 'Frameworks/bundle-apple-xcframework-ios/ffmpegkit.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavdevice.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavcodec.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavfilter.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavformat.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavutil.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libswresample.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libswscale.xcframework'
+       ss.ios.frameworks = 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'VideoToolbox'                  
+       ss.ios.vendored_frameworks = 'Frameworks/bundle-apple-xcframework-ios/ffmpegkit.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavdevice.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavcodec.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavfilter.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavformat.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavutil.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libswresample.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libswscale.xcframework'
                          
       ss.ios.deployment_target = '12.1'
   end
