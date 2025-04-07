@@ -14,7 +14,8 @@ Pod::Spec.new do |s|
   s.requires_arc      = true
   s.static_framework  = true
 
-  s.source       = { :path => "." }
+  s.source       = { :git => "https://gitpkg.vercel.app/yosizesta/ffmpeg-kit/react-native?main"  }
+
 
   s.default_subspec   = 'min-gpl'
 
