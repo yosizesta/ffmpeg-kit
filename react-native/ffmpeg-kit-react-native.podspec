@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.requires_arc      = true
   s.static_framework  = true
 
-  s.source       = { :git => "https://gitpkg.vercel.app/yosizesta/ffmpeg-kit/react-native?main"  }
+  s.source       = { :git => "https://github.com/yosizesta/ffmpeg-kit.git", :tag => "react.native.v#{s.version}" }
 
 
   s.default_subspec   = 'min-gpl'
@@ -38,11 +38,12 @@ Pod::Spec.new do |s|
   s.subspec 'min-gpl' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
-  
-       ss.ios.frameworks = 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'VideoToolbox'                  
-       ss.ios.vendored_frameworks = 'Frameworks/bundle-apple-xcframework-ios/ffmpegkit.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavdevice.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavcodec.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavfilter.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavformat.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libavutil.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libswresample.xcframework', 'Frameworks/bundle-apple-xcframework-ios/libswscale.xcframework'
-                         
-      ss.ios.deployment_target = '12.1'
+
+  s.ios.frameworks = 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'VideoToolbox'
+  s.ios.vendored_frameworks = 'ffmpegkit.xcframework', 'libavcodec.xcframework', 'libavdevice.xcframework', 'libavfilter.xcframework', 'libavformat.xcframework', 'libavutil.xcframework', 'libswresample.xcframework', 'libswscale.xcframework'
+
+  ss.resources = "https://github.com/yosizesta/ffmpeg-kit/releases/download/v6.0/ffmpeg-ios-min-gpl.zip"
+  ss.ios.deployment_target = '12.1'
   end
 
   s.subspec 'min-gpl-lts' do |ss|
