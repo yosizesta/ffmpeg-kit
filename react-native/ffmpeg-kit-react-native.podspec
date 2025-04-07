@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/yosizesta/ffmpeg-kit.git", :tag => "react.native.v#{s.version}" }
 
 
-  s.default_subspec   = 'min-gpl'
+  s.default_subspec   = 'min-gpl-new'
 
   s.dependency "React-Core"
 
@@ -35,14 +35,11 @@ Pod::Spec.new do |s|
       ss.ios.deployment_target = '10'
   end
 
-  s.subspec 'min-gpl' do |ss|
+  s.subspec 'min-gpl-new' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
 
-  ss.ios.frameworks = 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'VideoToolbox'
-  ss.ios.vendored_frameworks = '**/Framework/ffmpegkit.xcframework', '**/Framework/libavcodec.xcframework', '**/Framework/libavdevice.xcframework', '**/Framework/libavfilter.xcframework', '**/Framework/libavformat.xcframework', '**/Framework/libavutil.xcframework', '**/Framework/libswresample.xcframework', '**/Framework/libswscale.xcframework'
-
-  ss.resources = "**/Framework/*.xcframework"
+   ss.dependency 'ffmpeg-kit-ios-min-gpl-new', "6.0"
   ss.ios.deployment_target = '12.1'
   end
 
