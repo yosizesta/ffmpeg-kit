@@ -39,10 +39,10 @@ Pod::Spec.new do |s|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
 
-  s.ios.frameworks = 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'VideoToolbox'
-  s.ios.vendored_frameworks = 'ffmpegkit.xcframework', 'libavcodec.xcframework', 'libavdevice.xcframework', 'libavfilter.xcframework', 'libavformat.xcframework', 'libavutil.xcframework', 'libswresample.xcframework', 'libswscale.xcframework'
+  ss.ios.frameworks = 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'VideoToolbox'
+  ss.ios.vendored_frameworks = '**/Framework/ffmpegkit.xcframework', '**/Framework/libavcodec.xcframework', '**/Framework/libavdevice.xcframework', '**/Framework/libavfilter.xcframework', '**/Framework/libavformat.xcframework', '**/Framework/libavutil.xcframework', '**/Framework/libswresample.xcframework', '**/Framework/libswscale.xcframework'
 
-  ss.resources = "https://github.com/yosizesta/ffmpeg-kit/releases/download/v6.0/ffmpeg-ios-min-gpl.zip"
+  ss.resources = "**/Framework/*.xcframework"
   ss.ios.deployment_target = '12.1'
   end
 
