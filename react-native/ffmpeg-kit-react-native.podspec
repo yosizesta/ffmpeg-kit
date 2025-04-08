@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
 
-   ss.dependency 'ffmpeg-kit-ios-min-gpl-new'
+   ss.dependency 'ffmpeg-kit-ios-min-gpl-new',  "#{ENV['FFMPEGKIT_PACKAGE_VERSION'] || '~> 6.1'}"
   ss.ios.deployment_target = '12.1'
   end
 
